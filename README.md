@@ -1,12 +1,13 @@
-# action-template
+# action-pmd
 
-<!-- TODO: replace reviewdog/action-template with your repo name -->
-[![Test](https://github.com/reviewdog/action-template/workflows/Test/badge.svg)](https://github.com/reviewdog/action-template/actions?query=workflow%3ATest)
-[![reviewdog](https://github.com/reviewdog/action-template/workflows/reviewdog/badge.svg)](https://github.com/reviewdog/action-template/actions?query=workflow%3Areviewdog)
-[![depup](https://github.com/reviewdog/action-template/workflows/depup/badge.svg)](https://github.com/reviewdog/action-template/actions?query=workflow%3Adepup)
-[![release](https://github.com/reviewdog/action-template/workflows/release/badge.svg)](https://github.com/reviewdog/action-template/actions?query=workflow%3Arelease)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/reviewdog/action-template?logo=github&sort=semver)](https://github.com/reviewdog/action-template/releases)
+<!-- badges -->
+[![Test](https://github.com/dbelyaev/action-pmd/workflows/Test/badge.svg)](https://github.com/dbelyaev/action-pmd/actions?query=workflow%3ATest)
+[![reviewdog](https://github.com/dbelyaev/action-pmd/workflows/reviewdog/badge.svg)](https://github.com/dbelyaev/action-pmd/actions?query=workflow%3Areviewdog)
+[![depup](https://github.com/dbelyaev/action-pmd/workflows/depup/badge.svg)](https://github.com/dbelyaev/action-pmd/actions?query=workflow%3Adepup)
+[![release](https://github.com/dbelyaev/action-pmd/workflows/release/badge.svg)](https://github.com/dbelyaev/action-pmd/actions?query=workflow%3Arelease)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/dbelyaev/action-pmd?logo=github&sort=semver)](https://github.com/dbelyaev/action-pmd/releases)
 [![action-bumpr supported](https://img.shields.io/badge/bumpr-supported-ff69b4?logo=github&link=https://github.com/haya14busa/action-bumpr)](https://github.com/haya14busa/action-bumpr)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
 ![github-pr-review demo](https://user-images.githubusercontent.com/3797062/73162963-4b8e2b00-4132-11ea-9a3f-f9c6f624c79f.png)
 ![github-pr-check demo](https://user-images.githubusercontent.com/3797062/73163032-70829e00-4132-11ea-8481-f213a37db354.png)
@@ -52,31 +53,26 @@ inputs:
   reviewdog_flags:
     description: 'Additional reviewdog flags'
     default: ''
-  ### Flags for <linter-name> ###
+  ### Flags for pmd ###
   locale:
     description: '-locale flag of misspell. (US/UK)'
     default: ''
 ```
 
 ## Usage
-<!-- TODO: update. replace `template` with the linter name -->
 
 ```yaml
 name: reviewdog
 on: [pull_request]
 jobs:
-  # TODO: change `linter_name`.
   linter_name:
-    name: runner / <linter-name>
+    name: runner / pmd
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: reviewdog/action-template@v1
+      - uses: dbelyaev/action-pmd@v1
         with:
           github_token: ${{ secrets.github_token }}
-          # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
           reporter: github-pr-review
-          # Change reporter level if you need.
-          # GitHub Status Check won't become failure with warning.
           level: warning
 ```
