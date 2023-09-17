@@ -8,6 +8,10 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
+# install linter tool
+wget -q https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.0.0-rc3/pmd-dist-7.0.0-rc3-bin.zip \
+ && unzip pmd-dist-7.0.0-rc3-bin.zip
+
 misspell -locale="${INPUT_LOCALE}" . \
   | reviewdog -efm="%f:%l:%c: %m" \
       -name="linter-name (misspell)" \
