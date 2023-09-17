@@ -1,7 +1,7 @@
 FROM alpine:3.18
 
 ENV REVIEWDOG_VERSION=v0.14.0
-ENV PMD_VERSION=7.0.0-rc2
+ENV PMD_VERSION=7.0.0-rc3
 
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
