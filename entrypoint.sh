@@ -8,6 +8,7 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
+chmod +x /usr/local/bin/pmd/bin/pmd
 alias pmd="/usr/local/bin/pmd/bin/pmd"
 
 reviewdog --version
