@@ -10,6 +10,10 @@ export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
 alias pmd="/usr/local/bin/pmd/bin/pmd"
 
+reviewdog --version
+java --version
+pmd --version
+
 pmd check --no-progress --no-cache --dir "${INPUT_WORKDIR}" --rulesets "${INPUT_RULESETS_PATH}" --format emacs \
   | reviewdog -efm="%f:%l: %m" \
       -name="pmd" \
