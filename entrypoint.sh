@@ -12,9 +12,7 @@ alias pmd="/usr/local/bin/pmd/bin/pmd"
 
 reviewdog --version
 java --version
-/usr/local/bin/pmd/bin/pmd --version
-exec /usr/local/bin/pmd/bin/pmd --version
-pmd --version
+ezec java /usr/local/bin/pmd/bin/pmd --version
 
 exec pmd check --no-progress --no-cache --dir "${INPUT_WORKDIR}" --rulesets "${INPUT_RULESETS_PATH}" --format emacs \
   | reviewdog -efm="%f:%l: %m" \
