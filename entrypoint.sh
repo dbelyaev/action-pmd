@@ -8,11 +8,12 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-chmod +x /usr/local/bin/pmd/bin/pmd
 alias pmd="/usr/local/bin/pmd/bin/pmd"
 
 reviewdog --version
 java --version
+/usr/local/bin/pmd/bin/pmd --version
+exec /usr/local/bin/pmd/bin/pmd --version
 pmd --version
 
 exec pmd check --no-progress --no-cache --dir "${INPUT_WORKDIR}" --rulesets "${INPUT_RULESETS_PATH}" --format emacs \
