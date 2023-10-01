@@ -1,7 +1,7 @@
 FROM openjdk:17-alpine
 
 ENV REVIEWDOG_VERSION=v0.15.0
-ENV PMD_VERSION=7.0.0-rc3
+ENV PMD_VERSION=7.0.0-rc4
 
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
